@@ -32,13 +32,13 @@
 }
 
 .cv-container {
-    height: calc(100vh - 300px - 100px - 50px);
+    min-height: calc(100vh - 300px - 100px - 50px);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.cv-container a {
+.cv-content div a {
     display: inline-block;
     width: 300px;
     height: 100px;
@@ -55,11 +55,11 @@
     margin: 1em;
 }
 
-.cv-container a:hover {
+.cv-content div:hover a {
     transform: translateY(-1em);
 }
 
-.cv-container a:nth-child(2):hover {
+.cv-content div:nth-child(2):hover a {
     transform: translateY(1em);
 }
 
@@ -70,9 +70,8 @@
 }
 
 @media (max-width: 500px) {
-    .cv-container a {
-        width: 250px;
-        height: 50px;
-        font-size: 1em;
+    .cv-content div a {
+        width: 210px;
+        height: 70px;
     }
 }
