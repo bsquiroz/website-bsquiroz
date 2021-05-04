@@ -88,6 +88,12 @@
                         placeholder="¿Como te ayudo?"
                         name="desc"
                     ></textarea>
+                    <div class="show-error alert-active" id="alertError">
+                        <p>Todos los campos son obligatorios</p>
+                    </div>
+                    <div class="show-succes alert-active" id="alertSucces">
+                        <p>Enviando el formulario...</p>
+                    </div>
                     <input type="submit" value="Enviar" />
                 </form>
             </div>
@@ -97,4 +103,41 @@
         </footer>
     </body>
     <script src="../js.js"></script>
+    <script>
+        $FORM = document.querySelector("#form");
+        $FORM.addEventListener("submit", (e) => {
+            const nombre = e.target.nombre.value;
+            const celular = e.target.number.value;
+            const email = e.target.email.value;
+            const dir = e.target.localidad.value;
+            const textArea = e.target.desc.value;
+
+            if (
+                nombre.trim() === "" ||
+                celular.trim() === "" ||
+                email.trim() === "" ||
+                dir.trim() === "" ||
+                textArea.trim() === ""
+            ) {
+                const $ALERTERROR = document.querySelector("#alertError");
+                e.preventDefault();
+                $ALERTERROR.classList.toggle("alert-active");
+                setTimeout(() => {
+                    $ALERTERROR.classList.toggle("alert-active");
+                }, 3000);
+            } else {
+                const $ALERTSUCCES = document.querySelector("#alertSucces");
+                $ALERTSUCCES.classList.toggle("alert-active");
+                e.preventDefault();
+                setTimeout(() => {
+                    $ALERTSUCCES.classList.toggle("alert-active");
+                    e.target.nombre.value = "";
+                    e.target.number.value = "";
+                    e.target.email.value = "";
+                    e.target.localidad.value = "";
+                    e.target.desc.value = "";
+                }, 3000);
+            }
+        });
+    </script>
 </html>
