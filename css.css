@@ -157,10 +157,14 @@
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
+    min-height: calc(100vh - 50px - 100px - 300px);
+    justify-content: center;
+    align-items: center;
 }
 
 .index-container-content .principal {
     width: 60%;
+    font-size: 1.5em;
 }
 
 .index-container-content .imgBox {
@@ -203,12 +207,15 @@ footer small {
         width: 100%;
         min-width: 200px;
     }
+
+    .index-container-content .principal {
+        font-size: 1em;
+    }
 }
 
 @media (max-width: 720px) {
     .navegacion {
         flex-direction: column;
-        /* position: absolute; */
         opacity: 0.9;
         height: 100vh;
         width: 100%;
