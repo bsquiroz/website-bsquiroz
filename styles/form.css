@@ -147,6 +147,12 @@ input[type="submit"] {
     display: none;
 }
 
+.texto-prueba {
+    text-align: center;
+    background-color: var(--form-color);
+    color: #fff;
+}
+
 @media (max-width: 720px) {
     .form {
         min-height: calc(100vh - 50px);
